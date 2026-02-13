@@ -2,61 +2,104 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
-    height: 100vh;
-    background: #d123e8;
-    color: rgb(73, 69, 69);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    text-align: center;
     align-items: center;
+    background: linear-gradient(135deg, #7f00ff, #e100ff);
+    padding: 20px;
 }
 
-.container {
-    padding: 20px;
-    background: #fff;
-    height: 60vh;
-    width: 600px;
-    border-radius: 5px;
-    overflow-x: hidden;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
+.card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 h1 {
-    font-size: 25px;
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-h2 {
-    font-size: 25px;
-    margin-bottom: 20px;
+.subtitle {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 30px;
 }
 
-form {
-    width: 550px;
-    margin: auto;
-    margin-top: 20px;
-}
-
-input, button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
+.input-group {
     margin-bottom: 20px;
-    outline: none;
-    border-radius: 6px;
 }
 
 input {
-    border: 1px solid gray;
-    color: gray;
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+input:focus {
+    border-color: #7f00ff;
+    box-shadow: 0 0 0 3px rgba(127, 0, 255, 0.1);
+    outline: none;
 }
 
 button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
     border: none;
-    cursor: pointer;
-    background: blue;
+    font-size: 16px;
+    font-weight: bold;
+    background: #7f00ff;
     color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #5f00c7;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.message.success {
+    color: green;
+}
+
+.message.error {
+    color: red;
+}
+
+.message.info {
+    color: #7f00ff;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .card {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
 }
