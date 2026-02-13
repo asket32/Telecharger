@@ -1,6 +1,6 @@
 const input = document.querySelector("input");
 const btn = document.querySelector("button");
-const message = document.querySelector(".message"); // zone pour afficher les erreurs
+const message = document.querySelector(".message");
 
 btn.addEventListener("click", async (event) => {
   event.preventDefault();
@@ -27,7 +27,6 @@ async function downloadFile(url) {
 
     const blob = await response.blob();
 
-    // Récupérer le nom du fichier depuis les headers si possible
     let fileName = "download";
 
     const contentDisposition = response.headers.get("content-disposition");
@@ -37,7 +36,6 @@ async function downloadFile(url) {
         fileName = match[1];
       }
     } else {
-      // Sinon on tente de récupérer le nom depuis l’URL
       fileName = url.split("/").pop().split("?")[0] || "download";
     }
 
@@ -49,7 +47,6 @@ async function downloadFile(url) {
     document.body.appendChild(a);
     a.click();
 
-    // Nettoyage
     a.remove();
     window.URL.revokeObjectURL(blobUrl);
 
